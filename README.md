@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 ### 2. Parse all reports
 
- Copy xml format reports to **/import** or place a links to directories with exported reports there
+ Copy xml format reports to **/import** or place a links to directories with exported reports there.
  All vaild xml reports in **/import** wil be autodetected and parsed
 
 ```bash
