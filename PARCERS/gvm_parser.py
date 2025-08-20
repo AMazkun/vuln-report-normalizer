@@ -1,7 +1,7 @@
 import re
 import uuid
 
-from MAVERICK.lib_etc.logger_helper import logger
+from lib_etc.logger_helper import logger
 import xmltodict
 from datetime import datetime
 
