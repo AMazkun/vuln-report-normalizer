@@ -1,7 +1,7 @@
 import pymongo
 import hashlib
 
-from MAVERICK.lib_etc.logger_helper import logger
+from lib_etc.logger_helper import logger
 
 def update_mongodb_collections(xml_file_path, reports, reports_cve, converted_results, scan_info):
     """Обновляет MongoDB коллекцию с результатами"""
