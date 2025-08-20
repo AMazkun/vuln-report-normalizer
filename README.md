@@ -3,9 +3,14 @@
 A universal parser and normalizer for security scanner reports (GVM, Nessus, Nikto, ZAP, Burp, Nmap) into a **unified MongoDB schema**.  
 This project helps security teams and researchers **store, query, and analyze** heterogeneous scan results in a consistent format.
 
+Comparing reports across different security scanners is often a real headache. Each tool (Nmap, Nessus, GVM, Nikto, ZAP, Burp, etc.) uses its own structure, naming conventions, and levels of detail when describing vulnerabilities. What’s called a “Risk” in one scanner might be “Threat” or “Severity” in another, CVSS vectors may appear in completely different formats, and even common identifiers like CVE numbers may be buried in tags or presented as free text. This inconsistency makes it challenging not only to normalize findings into a single schema but also to verify which vulnerabilities are genuine and which are false positives. Building a unified view requires careful parsing, mapping, and often manual validation to ensure accurate results.
+
+All mapping details into **FieldsMapping.numbers** file.
+
 ---
 
 ## ✨ Features
+
 - 📂 Parse multiple security scanner formats:
   - GVM (OpenVAS)
   - Nessus
@@ -73,23 +78,30 @@ Each normalized vulnerability document follows this schema:
 
 ## 🚀 Usage
 
-### 1. Clone the repo
+### 1. Clone and install
+
 ```bash
 git clone https://github.com/yourname/vuln-report-normalizer.git
 cd vuln-report-normalizer
 ```
 
-### 2. Install dependencies
+Install python packadges dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Parse a report
+### 2. Parse all reports
+
+ Copy xml format reports to **/import** or place a links to directories with exported reports there
+ All vaild xml reports in **/import** wil be autodetected and parsed
+
 ```bash
-python parse_report.py reports/scan.xml
+python PARCERS/PARSER.py
 ```
 
 This will:
+
 - Auto-detect scanner type
 - Parse report into MongoDB schema
 - Save documents into MongoDB
@@ -98,28 +110,33 @@ This will:
 ---
 
 ## 🧩 Supported Scanners
+
 - ✅ GVM (XML)
 - ✅ Nessus (XML)
-- ✅ Nikto (XML/JSON)
-- ✅ OWASP ZAP (JSON/XML)
-- ✅ Burp Suite (XML/JSON)
+- ✅ Nikto (XML)
+- ✅ OWASP ZAP (XML)
+- ✅ Burp Suite (XML)
 - ✅ Nmap (XML)
 
 ---
 
 ## 📦 Roadmap
+
 - [ ] Add support for more scanners (Acunetix, Qualys, OpenSCAP)
-- [ ] REST API with FastAPI
+- [ ] Complete NMAP and BURP reports
+- [ ] NMAP based scaner with infrastructure verification
 - [ ] Web dashboard with filtering and statistics
 - [ ] Docker Compose integration with MongoDB + Grafana
 
 ---
 
 ## 🤝 Contributing
+
 PRs and issues are welcome!  
 If you have a scanner not yet supported, feel free to open a feature request.
 
 ---
 
 ## 📜 License
+
 MIT License – free to use, modify, and distribute.

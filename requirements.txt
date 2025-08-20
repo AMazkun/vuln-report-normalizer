@@ -1,0 +1,4 @@
+dnspython==2.7.0
+problems==0.0.2
+pymongo==4.14.0
+xmltodict==0.14.2
