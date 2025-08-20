@@ -6,7 +6,7 @@ import socket
 import ipaddress
 import xmltodict
 
-from MAVERICK.lib_etc.logger_helper import logger
+from lib_etc.logger_helper import logger
 
 def get_ipv4_from_uri(uri: str) -> str:
     try:
