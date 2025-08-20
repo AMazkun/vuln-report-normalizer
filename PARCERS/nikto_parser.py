@@ -3,7 +3,7 @@ import json
 from urllib.parse import urlparse
 from datetime import datetime
 import re
-from MAVERICK.lib_etc.logger_helper import logger
+from lib_etc.logger_helper import logger
 
 def extract_cve_from_nikto_desc(description):
     """Извлекает CVE из описания Nikto"""
