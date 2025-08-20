@@ -8,15 +8,15 @@ import time
 import xmltodict
 import pymongo
 
-from MAVERICK.PARCERS.burp_parser import burp_reports_parse_cg
-from MAVERICK.PARCERS.gvm_parser import parse_gvm_report
-from MAVERICK.PARCERS.mongodb_store import mongo_collection_add_report
-from MAVERICK.PARCERS.nessue_parser import parse_nessus_report
-from MAVERICK.PARCERS.nikto_parser import parse_nikto_report_cg
-from MAVERICK.PARCERS.nmap_parser import nmap_reports_parse_cg
-from MAVERICK.PARCERS.zap_parser import parse_zap_report_cg
-from MAVERICK.lib_etc.logger_helper import logger
-from MAVERICK.lib_etc.os_utils import collect_files_in_folder
+from PARCERS.burp_parser import burp_reports_parse_cg
+from PARCERS.gvm_parser import parse_gvm_report
+from PARCERS.mongodb_store import mongo_collection_add_report
+from PARCERS.nessue_parser import parse_nessus_report
+from PARCERS.nikto_parser import parse_nikto_report_cg
+from PARCERS.nmap_parser import nmap_reports_parse_cg
+from PARCERS.zap_parser import parse_zap_report_cg
+from lib_etc.logger_helper import logger
+from lib_etc.os_utils import collect_files_in_folder
 
 # Подключение к MongoDB
 def connect_to_mongodb(mongo_uri, db_name):
